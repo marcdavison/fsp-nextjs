@@ -1,0 +1,16 @@
+workDir: .
+
+build:
+  command: npm install --legacy-peer-deps && npm run build
+
+# Optional: Add environment variables if needed
+# env:
+#   NEXT_PUBLIC_API_URL: "https://your-api.com"
+
+# Optional: Backend Cloud Run settings
+# runConfig:
+#   minInstances: 0
+#   maxInstances: 100
+#   concurrency: 80
+#   cpu: 1
+#   memoryMiB: 512
