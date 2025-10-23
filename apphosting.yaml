@@ -3,6 +3,15 @@ workDir: .
 build:
   command: npm install --legacy-peer-deps && npm run build
 
+# Settings for Backend (on Cloud Run).
+# See https://firebase.google.com/docs/app-hosting/configure#cloud-run
+runConfig:
+  minInstances: 0
+  # maxInstances: 100
+  # concurrency: 80
+  # cpu: 1
+  # memoryMiB: 512
+
 # Optional: Add environment variables if needed
 # env:
 #   NEXT_PUBLIC_API_URL: "https://your-api.com"
