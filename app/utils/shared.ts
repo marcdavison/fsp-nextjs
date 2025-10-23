@@ -1,7 +1,7 @@
-import { UserCredential } from "firebase/auth";
+// import { UserCredential } from "firebase/auth";
 import { AppRouterInstance } from "next/dist/shared/lib/app-router-context.shared-runtime";
 
-export function completeSignIn(result: UserCredential, token: string, router: AppRouterInstance) {
+export function completeSignIn(result: any, token: string, router: AppRouterInstance) {
 
     const creationTime = result.user.metadata.creationTime;
     console.log('creationTime is ', creationTime);
