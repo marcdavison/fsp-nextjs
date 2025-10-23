@@ -1,7 +1,7 @@
 workDir: .
 
 build:
-  command: npm install --legacy-peer-deps && npm run build
+  command: npm install --legacy-peer-deps && next build --no-lint
 
 # Settings for Backend (on Cloud Run).
 # See https://firebase.google.com/docs/app-hosting/configure#cloud-run
