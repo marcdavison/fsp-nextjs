@@ -1,0 +1,23 @@
+.footer {
+    view-transition-name: disabled;
+    z-index: 9999;
+    position: fixed;
+}
+
+li.home {
+    background: url('../../../public/home-black.svg') no-repeat center top;
+    background-size: 50%;
+    padding-top: 26px;
+}
+
+li.plus {
+    background: url('../../../public/plus-black.svg') no-repeat center top;
+    background-size: 30%;
+    padding-top: 26px;
+}
+
+li.more {
+    background: url('../../../public/more-black.svg') no-repeat center top;
+    background-size: 30%;
+    padding-top: 12px;
+}
