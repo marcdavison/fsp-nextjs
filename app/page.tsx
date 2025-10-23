@@ -1,47 +1,17 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import classes from './page.module.css'
+import NavLink from './components/ui/NavLink';
+import { AniType } from './utils/types';
 
-export default function Home() {
-  return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>EDIT ALL THIS TO BE THE PREDICT THE SCORE APP.</h1>
+const Welcome = () => {
+    // check for user .. if yes tehn redirect to the home
+    return <div>
+        <img src="/logo.svg" className={classes.homeLogo}/>
+        <div className={classes.buttonContainer }>
+            <p>Welcome to Predict The Score where you can pit your wits at predicting the unpredictable results of this seasons EPL.</p>
+            <p>Join your friends in your own private league or play solo and try to finish in on top!</p>
+            <NavLink href={"/auth"} className={classes.button} aniType={AniType.FADE}>JOIN NOW!</NavLink>
         </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
     </div>
-  );
 }
+
+export default Welcome;
