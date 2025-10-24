@@ -4,7 +4,7 @@ import { getMarkersFromRTDB } from '@/lib/getMarkers';
 
 export const GET = async () => {
   try {
-    console.log('try to get markers');
+    console.log('try to get marker');
     const markers = await getMarkersFromRTDB();
     console.log(markers);
     return NextResponse.json({ markers });
