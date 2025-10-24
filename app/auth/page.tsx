@@ -54,9 +54,19 @@ export default function ClientComponent() {
 
   }
 
+
+  async function getMarkers() {
+    // call api to get markers.
+    const markers  = await fetch('/api/getMarkers');
+    const markerData = await markers.json();
+    console.log(markerData);
+  }
+
   return <div>
     <p>Click a value to send to the api</p>
     <p><input type="button" onClick={sendCorrect} value="Correct" /></p>
     <p><input type="button" onClick={sendIncorrect}  value="Incorrect" /></p>
+
+    <p><input type="button" onClick={getMarkers}  value="Get Markers" /></p>
   </div>;
 }
