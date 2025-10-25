@@ -42,6 +42,9 @@ export default function SignIn() {
                         modalCtx.showModal();
                     } else {
                         const token = await result.user.getIdToken();
+                        console.log('calling completeSignIn ..result ', result);
+                        console.log('calling completeSignIn ..token ', token);
+                        console.log('calling completeSignIn ..router ', router);
                         completeSignIn(result, token, router);
                     }
                 }
