@@ -1,0 +1,13 @@
+workDir: .
+
+build:
+  command: npm install --legacy-peer-deps && next build --no-lint
+
+env:
+  - variable: FIREBASE_ADMIN_ENV
+    secret: firebaseAdminEnv
+
+runConfig:
+  minInstances: 0
+  maxInstances: 10
+  memoryMiB: 512

@@ -10,7 +10,7 @@ export async function POST(request: NextRequest) {
     // check values have been recieved in api
     console.log('in the api and token is ', token);
     console.log('in the api and sessionData is ', sessionData);
-    /*
+
     const { firebaseAuth, firebaseDB } = getFirebaseAdmin();
 
 
@@ -27,10 +27,12 @@ export async function POST(request: NextRequest) {
     const sessionCookie = await firebaseAuth.createSessionCookie(token, {
       expiresIn: 60 * 60 * 24 * 1000,
     });
-*/
+
+    console.log('sessionCookie is ', sessionCookie);
+
 
     const response = NextResponse.json({ success: true });
-    response.cookies.set('session', token, {
+    response.cookies.set('session', sessionCookie, {
       httpOnly: true,
       secure: true,
       path: '/',
