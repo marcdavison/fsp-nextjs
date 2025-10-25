@@ -25,21 +25,22 @@ export function completeSignIn(result: any, token: string, router: AppRouterInst
     */
 
 
-// validate in session
+    // clientside session storage
     sessionStorage.setItem('logoutDone', 'false');
     sessionStorage.setItem('USER_SESSION_DATA', JSON.stringify(USER_SESSION_DATA));
 
+    // send tokens to api for validation with firebaseAdmin
     fetch('/api/session', {
         method: 'POST',
         body: JSON.stringify({ token, sessionData: USER_SESSION_DATA }),
         headers: {
-        'Content-Type': 'application/json',
+            'Content-Type': 'application/json',
         },
     })
     .then((res) => {
         console.log(res);
         if (res.ok) {
-            console.log("send to home");
+            // send to home, middleware to check on session cookie creation
             router.push('/home');
         } else {
             console.error('Failed to store cookie');
