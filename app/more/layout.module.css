@@ -1,0 +1,80 @@
+.pageContent {
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(180deg, #fefefe 40px, #EEEEEE 41px, #fAFAfA 42px, #fcfcfc 100vh);
+    filter: drop-shadow(0px 0px 20px rgb(0, 0, 0, 0.3));
+    top: 10px;
+    border-radius: 5px 5px 0px 0px;
+    padding-top: 10px;
+    position: absolute;
+    color: #000003;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    text-transform: uppercase;
+    height: 30px;
+}
+
+.header h2 {
+    text-align: center;
+    line-height: 20px;
+    text-transform: uppercase;
+}
+
+.header .link {
+    min-width: 40px;
+}
+
+.middle {
+    margin: 32px 12px 32px 24px;
+    height: calc(100% - 18vh);
+    overflow-y: auto;
+}
+
+
+.middle .menuContainer {
+    margin: -24px;
+}
+
+ul.menu {
+    margin-top: 24px;
+    padding: 0px;
+}
+
+ul.menu li {
+    display: flex;
+    list-style-type: none;
+    margin: 16px 0px;
+    border-bottom: 1px solid #999;
+    padding-bottom: 16px;
+    padding-left: 24px;
+    font-size: 100%;
+    justify-content: space-between;
+    padding-right: 16px;
+}
+
+a.link {
+    text-decoration: none;
+    color: #2f2f2f;
+    width: 85%;
+    text-align: left;
+    display: block;
+}
+
+a.backLink {
+    text-decoration: none;
+    color: #2f2f2f;
+    padding-left: 16px;
+}
+
+.temp {
+    background: red;
+    height: 150px;
+    width: 100%;
+    position: fixed;
+    bottom: 0px;
+    z-index: 9999;
+    view-transition-name: disabled;
+}
