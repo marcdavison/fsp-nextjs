@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Tilt_Warp, Montserrat } from "next/font/google";
-import { ViewTransitions } from 'next-view-transitions';
+// import { ViewTransitions } from 'next-view-transitions';
 
 import "../globals.css";
 
@@ -32,8 +32,6 @@ export default async function RootLayout({
 }>) {
     console.log('we are in the auth layout file');
   return (
-    <ViewTransitions>
-      {children}
-    </ViewTransitions>
+      children
   );
 }
