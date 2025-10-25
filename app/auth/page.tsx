@@ -67,6 +67,6 @@ export default function ClientComponent() {
     <p><input type="button" onClick={sendCorrect} value="Correct" /></p>
     <p><input type="button" onClick={sendIncorrect}  value="Incorrect" /></p>
 
-    <p><input type="button" onClick={getMarkers}  value="Get Markers" /></p>
+    <p><input type="button" onClick={getMarkers}  value="Get the Markers" /></p>
   </div>;
 }
