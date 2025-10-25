@@ -4,12 +4,17 @@ import { getFirebaseAdmin } from '../../../firebase/admin';
 
 export async function POST(request: NextRequest) {
   try {
+    console.log("in the session api...")
     const { token, sessionData } = await request.json();
-    const { firebaseAuth, firebaseDB } = getFirebaseAdmin();
 
     // check values have been recieved in api
     console.log('in the api and token is ', token);
     console.log('in the api and sessionData is ', sessionData);
+    /*
+    const { firebaseAuth, firebaseDB } = getFirebaseAdmin();
+
+
+
 
     // verify token with firebase admin
     const decodedToken = await firebaseAuth.verifyIdToken(token);
@@ -22,9 +27,10 @@ export async function POST(request: NextRequest) {
     const sessionCookie = await firebaseAuth.createSessionCookie(token, {
       expiresIn: 60 * 60 * 24 * 1000,
     });
+*/
 
     const response = NextResponse.json({ success: true });
-    response.cookies.set('session', sessionCookie, {
+    response.cookies.set('session', token, {
       httpOnly: true,
       secure: true,
       path: '/',
