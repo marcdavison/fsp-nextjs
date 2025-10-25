@@ -1,0 +1,20 @@
+.button {
+    color: #fff;
+    filter: none;
+    text-align: center;
+    background: #444def;
+    border: 0;
+    border-radius: 6px;
+    flex-direction: column;
+    width: 80%;
+    min-width: 45%;
+    margin: 0 auto;
+    padding: 18px;
+    font-family: Tilt Warp, cursive;
+    font-size: 140%;
+    display: flex;
+    position: absolute;
+    z-index: 10;
+    left: 10%;
+    top: 50px;
+}

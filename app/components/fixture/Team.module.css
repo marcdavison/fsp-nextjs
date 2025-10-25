@@ -1,0 +1,102 @@
+.container {
+    width: 50%;
+    align-items: center;
+    display: flex;
+}
+.containerReverse {
+    width: 50%;
+    align-items: center;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+
+
+.name {
+    flex-grow: 1;
+    text-align: right;
+    padding-right: 15px;
+    height: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: flex-end;
+    text-transform: uppercase;
+}
+
+.containerReverse .name {
+    flex-grow: 1;
+    text-align: right;
+    padding-left: 15px;
+    height: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: flex-start;
+    text-transform: uppercase;    
+}
+
+
+.logoContainer {
+    display: block;
+    height: 40px;
+    width: 40px;
+    text-align: center;
+}
+.logoIag {
+    height: 40px;
+    width: auto;
+}
+
+.inputContainer {
+    width: 20%;
+    margin: 0px 8px;
+}
+
+.inputContainer input {
+    text-align: center;
+    height: 40px;
+    background-color: #fff;
+    width: 20% !important;
+    max-width: 50px !important;
+    min-width: 30px !important;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    color: #000;
+}
+
+.resultScore {
+font-size: 130%;
+    font-weight: 800;
+    margin: 0 4px;
+    background: #000;
+    color: #fff;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 8px;
+}
+
+.elapsed {
+    margin-right: 14px;
+    margin-top: -35px;
+    font-size: 85%;
+    font-weight: 800;
+}
+
+.liveScore {
+    font-size: 130%;
+    font-weight: 800;
+    margin: 0 4px;
+    color: #000;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 8px;
+}
+
+.name.away {
+    flex-grow: 1;
+    text-align: left;
+    padding-right: 0px;
+    padding-left: 15px;
+    justify-content: flex-start;
+}

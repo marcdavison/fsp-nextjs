@@ -1,0 +1,124 @@
+.fixtureGroup {
+    text-align: center;
+}
+
+.fixtureGroup h3 {
+    font-weight: 600;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: -12px;
+    font-size: 100%;
+    letter-spacing: 1px;
+}
+
+.fixtureContainer {
+    margin-top: 12px;
+}
+
+
+.kickoffTime {
+    text-decoration: uppercase;
+    font-size: 90%;
+    text-align: center;
+    display: block;
+    margin-bottom: 8px;
+    margin-top: 26px;
+}
+
+.teamsRow {
+    display: flex;
+    flex-direction: row;
+}
+
+
+.inputContainer {
+    width: 20%;
+}
+
+.inputContainer > input {
+    height: 40px;
+    background-color: #fff;
+    width: 20% !important;
+    max-width: 50px !important;
+    min-width: 30px !important;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    text-align: center;
+}
+
+.prediction {
+    display: flex;
+    flex-direction: column;
+}
+
+.goals {
+    width: 100%;
+    display: block;
+    color: black !important;
+}
+
+.goals span {
+    text-align: center;
+    display: inline-block !important;
+    width: 50%;
+    line-height: 180%;
+}
+
+.elapsed {
+    margin-right: 12px;
+    font-weight: 800;
+    font-size: 85%;
+    margin-top: -8px;
+}
+
+.points {
+    width: 100%;
+    display: block;
+}
+
+.lock {
+    background-image: url('../../../public/close-lock.png');
+    background-repeat: no-repeat;
+    background-size: 16px;
+    background-position-y: calc(100% - 4px);
+    background-position-x: calc(100% - 12px);
+}
+
+.open {
+    background-image: url('../../../public/open-lock.png');
+    background-repeat: no-repeat;
+    background-size: 16px;
+}
+
+
+.predictNotice {
+    width: 18% !important;
+    font-size: 85%;
+    flex-wrap: wrap;
+    line-height: 12px;
+}
+
+.predictNotice.notStarted {
+    width: 6% !important;
+    font-size: 85%;
+    flex-wrap: wrap;
+    line-height: 12px;
+}
+
+.liveScore span {
+  color: darkgreen;
+  font-size: 100%;
+}
+
+.predictNotice > div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.predictNotice > div > div {
+    color: red;
+}
