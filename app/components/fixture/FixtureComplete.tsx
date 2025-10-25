@@ -35,7 +35,7 @@ const FixtureComplete = ({ fixture, kickoffTime, pred, calc }: FixtureProps) => 
   return  <div className={classes.fixtureContainer}>
       <div className={classes.kickoffTime}>{formatTimeTo12Hr(kickoffTime)}</div>
         <div className={classes.teamsRow}>
-        { fixture.home && <Team home={true} teamData={fixture.home} isResult={true} prediction={pred} enablePredictions={false}></Team>}
+        { fixture.home && <Team home={true} teamData={fixture.home} isResult={true} prediction={pred}></Team>}
         <div className={classes.predictNotice}>
           {
             !pred &&  <div><div>NP</div></div>
@@ -51,7 +51,7 @@ const FixtureComplete = ({ fixture, kickoffTime, pred, calc }: FixtureProps) => 
           </div>
           }
         </div>
-        { fixture.away && <Team home={false} teamData={fixture.away} isResult={true} prediction={pred} enablePredictions={false}></Team>}
+        { fixture.away && <Team home={false} teamData={fixture.away} isResult={true} prediction={pred}></Team>}
       </div>
     </div>
 };

@@ -57,7 +57,7 @@ function sortGamesByDate(games: Fixtures, hostname: string, protocol: string) {
   return VALUES;
 }
 
-function sortLiveGamesByDate(games: Fixtures, hostname: string, protocol: string) {
+function sortLiveGamesByDate(games: Fixtures, hostname: string, protocol: string): FixtureData[] {
   console.log('SORT LIVE GAMES');
   console.log(games);
   console.log('WAS GAMES');
@@ -114,7 +114,7 @@ const ResultsFixtureGroup = ({ date, games, enablePredictions, userPredictions, 
   const futureFixtures = now.getTime() < fixtureDate.getTime();
   // console.log('in the realtime fixture group');
   // console.log(liveScores);
-  let sortedGames = [];
+  let sortedGames: any[] = [];
   if (liveScores) {
     sortedGames = sortLiveGamesByDate(liveScores['39'], 'localhost:3000', 'http');
   } else {

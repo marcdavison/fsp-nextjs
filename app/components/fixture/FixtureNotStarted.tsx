@@ -1,6 +1,7 @@
 "use client"
 
 import Team from "./Team";
+import TeamEdit from "./TeamEdit";
 import classes from './Fixture.module.css'
 import { FixtureData, UserPredictions } from '@/app/utils/types';
 import { useContext, useRef } from "react";
@@ -109,11 +110,11 @@ const FixtureNotStarted = ({ fixture, kickoffTime, isResult, hasKickedOff, enabl
   return <div className={classes.fixtureContainer}>
       <div className={classes.kickoffTime}>{formatTimeTo12Hr(kickoffTime)}</div>
         <div className={classes.teamsRow}>
-        { fixture.home && (!userPredictions || !userPredictions[`${fixture.id}`]) && <Team home={true} teamData={fixture.home} enablePredictions={enablePredictions} isResult={false} inputChange={handleChange}></Team>}
-        { fixture.home && userPredictions && userPredictions[`${fixture.id}`] && <Team home={true} teamData={fixture.home} enablePredictions={enablePredictions} prediction={userPredictions[`${fixture.id}`]} isResult={false} inputChange={handleChange}></Team>}
+        { fixture.home && (!userPredictions || !userPredictions[`${fixture.id}`]) && <TeamEdit home={true} teamData={fixture.home} enablePredictions={enablePredictions} isResult={false} inputChange={handleChange}></TeamEdit>}
+        { fixture.home && userPredictions && userPredictions[`${fixture.id}`] && <TeamEdit home={true} teamData={fixture.home} enablePredictions={enablePredictions} prediction={userPredictions[`${fixture.id}`]} isResult={false} inputChange={handleChange}></TeamEdit>}
         <div className={classes.predictNotice + '' + classes.notStarted}></div>
-        { fixture.away && (!userPredictions || !userPredictions[`${fixture.id}`]) && <Team home={false} teamData={fixture.away} enablePredictions={enablePredictions}  isResult={false}  inputChange={handleChange}></Team>}
-        { fixture.away && userPredictions && userPredictions[`${fixture.id}`] && <Team home={false} teamData={fixture.away} enablePredictions={enablePredictions}  prediction={userPredictions[`${fixture.id}`]}  isResult={false} inputChange={handleChange}></Team>}
+        { fixture.away && (!userPredictions || !userPredictions[`${fixture.id}`]) && <TeamEdit home={false} teamData={fixture.away} enablePredictions={enablePredictions}  isResult={false}  inputChange={handleChange}></TeamEdit>}
+        { fixture.away && userPredictions && userPredictions[`${fixture.id}`] && <TeamEdit home={false} teamData={fixture.away} enablePredictions={enablePredictions}  prediction={userPredictions[`${fixture.id}`]}  isResult={false} inputChange={handleChange}></TeamEdit>}
       </div>
     </div>
 };

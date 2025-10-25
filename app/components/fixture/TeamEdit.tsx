@@ -13,7 +13,7 @@ type Prediction = {
     home: number;
 }
 
-const Team = ({ home, teamData, prediction, isResult, inPlay, elapsed }: { home: boolean, teamData: TeamData; prediction?: Prediction; isResult: boolean; inPlay?: boolean; elapsed?: number; }) => {
+const TeamEdit = ({ home, teamData, enablePredictions, prediction, isResult, inPlay, elapsed, inputChange }: { home: boolean, teamData: TeamData; enablePredictions: boolean; prediction?: Prediction; isResult: boolean; inPlay?: boolean; elapsed?: number;  inputChange: (event: React.ChangeEvent<HTMLInputElement>) => void; }) => {
     function trimName(str: string) {
         return str.substring(0, 3);
     }
@@ -27,14 +27,13 @@ const Team = ({ home, teamData, prediction, isResult, inPlay, elapsed }: { home:
                 <img src={teamData.logo} alt={teamData.name + ' badge'} width={0} height={0} className={classes.logoIag} />
             </div>
             {
-                isResult && <div className={classes.resultScore}>{ teamData.goals }</div>
-            }
-            {
-                inPlay && <div className={classes.liveScore}>{ teamData.goals }</div>
+                (enablePredictions) && <div className={classes.inputContainer}>
+                    <InputField prediction={prediction} home={home} inputChange={inputChange}></InputField>
+                </div>
             }
         </div>
     return teamContent;
 
 }
 
-export default Team;
+export default TeamEdit;

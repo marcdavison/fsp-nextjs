@@ -43,7 +43,7 @@ function convertDate(dateString: string) {
 
 }
 
-function sortGamesByDate(games: Fixtures, hostname: string, protocol: string) {
+function sortGamesByDate(games: Fixtures, hostname: string, protocol: string): FixtureData[] {
   const VALUES = Object.values(games);
   const ENTRIES = Object.entries(games);
   
@@ -65,7 +65,7 @@ function sortGamesByDate(games: Fixtures, hostname: string, protocol: string) {
   return VALUES;
 }
 
-function sortLiveGamesByDate(games: Fixtures, hostname: string, protocol: string) {
+function sortLiveGamesByDate(games: Fixtures, hostname: string, protocol: string): any {
   console.log('SORT LIVE GAMES');
   console.log(games);
   console.log('WAS GAMES');
@@ -124,7 +124,7 @@ const RealtimeFixtureGroup = ({ date, games, allowPredictions, userPredictions, 
   const futureFixtures = now.getTime() < fixtureDate.getTime();
   // console.log('in the realtime fixture group');
   // console.log(liveScores);
-  let sortedGames = [];
+  let sortedGames: any[] = [];
   if (liveScores) {
     sortedGames = sortLiveGamesByDate(liveScores['39'], 'localhost:3000', 'http');
   } else {
