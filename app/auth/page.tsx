@@ -19,7 +19,7 @@ export default function ClientComponent() {
       .then((res) => {
         if (res.ok) {
           console.log('cookie stored .. ');
-          router.push('/dashboard'); // ✅ This triggers a GET request
+          router.push('/home'); // ✅ This triggers a GET request
         } else {
           console.error('Failed to store cookie');
         }
@@ -43,7 +43,7 @@ export default function ClientComponent() {
       .then((res) => {
         if (res.ok) {
           console.log('cookie stored .. ');
-          router.push('/dashboard'); // ✅ This triggers a GET request
+          router.push('/home'); // ✅ This triggers a GET request
         } else {
           console.error('Failed to store cookie');
         }
@@ -67,6 +67,6 @@ export default function ClientComponent() {
     <p><input type="button" onClick={sendCorrect} value="Correct" /></p>
     <p><input type="button" onClick={sendIncorrect}  value="Incorrect" /></p>
 
-    <p><input type="button" onClick={getMarkers}  value="Get the Markers" /></p>
+    <p><input type="button" onClick={getMarkers}  value="Get Markers" /></p>
   </div>;
 }

@@ -57,7 +57,7 @@ const Home = async () => {
     let cardContent
     if (!inGameWeek) {
       // card 1 is prev + card 2 countdown
-      const thisUserTotal = 20 // getUserTotal(userData.predictions, weeklyPrev);
+      const thisUserTotal = getUserTotal(userData.predictions, weeklyPrev);
       cardContent = <>
       <NavLink href={"/results/" + compId + "/" + weeklyPrev.id} aniType={AniType.FORWARD}>
         <Card id={weeklyPrev.id} 
