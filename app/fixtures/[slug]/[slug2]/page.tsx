@@ -35,21 +35,7 @@ const Fixtures = async () => {
 
     console.log('userData is on the fixtures page...');
     console.log(userData);
-    // const userPredictions = userData.predictions;
-    const userPredictions = {
-        '2025-10-25': {
-            39: {
-                1379052: {
-                    away: 3,
-                    home: 1
-                },
-                1379053: {
-                    away: 1,
-                    home: 1
-                }
-            }
-        }
-    }
+    const userPredictions = userData.predictions;
     console.log('userPredictions is', userPredictions);
 
     // call api to get maerkers.
@@ -88,9 +74,9 @@ const Fixtures = async () => {
                         {
                             ALL_ENTRIES.map(([key, value], index) => {
                                 if (index === todayIndex) {
-                                    return <RealtimeFixtureGroup key={key} date={key} games={value as { [key:string]: FixtureData}} allowPredictions={true} userPredictions={userPredictions[key] && userPredictions[key]['39'] ? userPredictions[key]['39'] : {}} isResultsPage={false}></RealtimeFixtureGroup>
+                                    return <RealtimeFixtureGroup key={key} date={key} games={value as { [key:string]: FixtureData}} allowPredictions={true} userPredictions={userPredictions && userPredictions[key] && userPredictions[key]['39'] ? userPredictions[key]['39'] : {}} isResultsPage={false}></RealtimeFixtureGroup>
                                 } else {
-                                    return <FixtureGroup key={key} date={key} games={value as { [key:string]: FixtureData}} allowPredictions={true} userPredictions={userPredictions[key] && userPredictions[key]['39'] ? userPredictions[key]['39'] : {}} isResultsPage={false}></FixtureGroup>
+                                    return <FixtureGroup key={key} date={key} games={value as { [key:string]: FixtureData}} allowPredictions={true} userPredictions={userPredictions && userPredictions[key] && userPredictions[key]['39'] ? userPredictions[key]['39'] : {}} isResultsPage={false}></FixtureGroup>
                                 }
                             })
                         }

@@ -75,7 +75,7 @@ function sortGamesByDate(games: Fixtures | FixturesMin, hostname: string, protoc
   return VALUES;
 }
 
-const FixtureGroup = async ({ date, games, allowPredictions, userPredictions, isResultsPage }: { date: string;  games: {  [key: string]: FixtureData}; allowPredictions: boolean; userPredictions: undefined | UserPredictions; isResultsPage: boolean}) => {
+const FixtureGroup = async ({ date, games, allowPredictions, userPredictions, isResultsPage }: { date: string;  games: {  [key: string]: FixtureData}; allowPredictions: boolean; userPredictions: UserPredictions; isResultsPage: boolean}) => {
   const headerList = await headers();
   const hostname = headerList.get("x-current-host");
   const protocol = headerList.get("x-current-protocol");

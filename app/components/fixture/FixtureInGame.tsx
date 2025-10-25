@@ -34,7 +34,7 @@ const FixtureInGame = ({ fixture, kickoffTime, pred, calc }: FixtureProps) => {
   return <div className={classes.fixtureContainer + ` ${fixture.elapsed && fixture.elapsed > 0 ? classes.lock : classes.open}`}>
       <div className={classes.kickoffTime}>{formatTimeTo12Hr(kickoffTime)} in game</div>
         <div className={classes.teamsRow}>
-        { fixture.home && <Team home={true} teamData={fixture.home} isResult={false} prediction={pred} enablePredictions={false} inPlay={true}></Team>}
+        { fixture.home && <Team home={true} teamData={fixture.home} isResult={false} prediction={pred} inPlay={true}></Team>}
         <div className={classes.predictNotice}>
           {
             !pred &&  <div><div>NP</div></div>
@@ -50,7 +50,7 @@ const FixtureInGame = ({ fixture, kickoffTime, pred, calc }: FixtureProps) => {
           </div>
           }
         </div>
-        { fixture.away && <Team home={false} teamData={fixture.away} isResult={false} prediction={pred} enablePredictions={false} inPlay={true} elapsed={fixture.elapsed}></Team>}
+        { fixture.away && <Team home={false} teamData={fixture.away} isResult={false} prediction={pred} inPlay={true} elapsed={fixture.elapsed}></Team>}
       </div>
     </div>
 };
