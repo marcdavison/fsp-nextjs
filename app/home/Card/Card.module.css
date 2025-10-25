@@ -1,0 +1,88 @@
+.title {
+    width: 100%;
+    background: black;
+    text-align: center;
+    color: white;
+    font-size: 120%;
+    line-height: 200%;
+    font-family: Tilt Warp, cursive;
+}
+
+span.weekNumber {
+    font-size: 200%;
+    padding: 0px 5px;
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0px 36px 0px 36px;
+    padding-top: 24px;
+}
+
+div.scores {
+    display: flex;
+    padding-top: 16px;
+    width: 90%;
+    justify-content: space-around;
+    
+}
+
+div.scores div {
+    text-align: center;
+    padding-top: 20px;
+    color: black;
+}
+
+div.scores div h3 {
+    font-size: 2rem;
+    padding-bottom: 6px;
+}
+
+div.scores div:nth-child(2) h3 {
+    font-size: 4rem;
+    line-height: 20%;
+    color: #444def;
+}
+
+div.scores ~ div {
+    width: 90%;
+    background-color: #000;
+    display: block;
+    height: 7px;
+    border-radius: 10px;
+    margin-top: 24px;
+}
+
+.countdownParent {
+    width: 100%;
+    padding-left: 5%;
+}
+
+.countdown {
+    color: #000;
+    font-size: 350%;
+    font-weight: 300;
+    line-height: 90px;
+    min-height: 100px;
+    font-family: Montserrat !important;
+    display: flex;
+    /*justify-content: center;*/
+    background: #fff;
+    border-radius: 0 0 12px 12px;
+}
+
+.container > div {
+    flex-grow: 0; /* Default: don't grow */
+    flex-shrink: 0;
+    flex-basis: auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: center;
+  }
+
+  .container > div:first-child,
+  .container > div:last-child {
+    flex-grow: 1; /* These will expand to fill remaining space */
+  }
