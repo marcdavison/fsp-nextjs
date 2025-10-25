@@ -13,7 +13,7 @@
 html {
   background-image: url('../public/ai-bg.png');
   background-position: center top;
-  background-size: cover;
+  background-size: auto;
 }
 
 html,
