@@ -4,7 +4,7 @@ import { getMarkersFromRTDB } from '@/lib/getMarkers';
 
 export const GET = async () => {
   try {
-    console.log('try to get marker');
+    console.log('try to get marker in the api call getMarkersFromRTDB .. not sure why i am calling in the method ?');
     const markers = await getMarkersFromRTDB();
     console.log(markers);
     return NextResponse.json({ markers });
