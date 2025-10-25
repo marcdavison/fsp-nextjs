@@ -1,13 +1,22 @@
 import { NextRequest, NextResponse } from 'next/server';
 
 export function middleware(request: NextRequest) {
-  const sessionValue = request.cookies.get('sessionValue')?.value;
   console.log('✅ Middleware engaged');
-  // console.log('🧠 Session cookie value in middleware:', sessionValue);
-  if (sessionValue !== 'correct-value') {
-    // console.log('🚫 Invalid or missing session cookie. Redirecting to /other');
-    return NextResponse.redirect(new URL('/other', request.url));
+  const session = request.cookies.get('session')?.value;
+  const userData = request.cookies.get('userData')?.value;
+  const isAuthRoute = request.nextUrl.pathname.startsWith('/auth');
+
+
+  console.log("session is ", session);
+  console.log("userData is ", userData);
+
+  // if user not logged in then send to auth
+  if ((!session || !userData) && !isAuthRoute) {
+    console.log('middleware re-routing to auth because session is ', session);
+    // goto auth if not logged in
+    return NextResponse.redirect(new URL('/auth', request.url));
   }
+
 
   // add current hostname to headers
   let headers = new Headers(request.headers);
