@@ -3,8 +3,13 @@ import { getDatabase } from 'firebase-admin/database';
 import { getAuth } from 'firebase-admin/auth';
 
 export function getFirebaseAdmin() {
+  console.log("process process.env.FIREBASE_ADMIN_ENV ", process.env.FIREBASE_ADMIN_ENV);
   console.log("process.env.ADMIN_PROJECT_ID is ..", process.env.ADMIN_PROJECT_ID);
   console.log("🧪 getApps() length:", getApps().length);
+
+  const adminEnv = JSON.parse(process.env.FIREBASE_ADMIN_ENV as string);
+  console.log("adminEnv");
+  console.log(adminEnv);
 
   let app;
   try {
@@ -12,11 +17,11 @@ export function getFirebaseAdmin() {
       console.log("🚀 Initializing new Firebase Admin app...");
       app = initializeApp({
         credential: cert({
-          projectId: process.env.ADMIN_PROJECT_ID!,
-          clientEmail: process.env.ADMIN_CLIENT_EMAIL!,
-          privateKey: process.env.ADMIN_PRIVATE_KEY!.replace(/\\n/g, '\n'),
+          projectId: adminEnv.ADMIN_PROJECT_ID!,
+          clientEmail: adminEnv.ADMIN_CLIENT_EMAIL!,
+          privateKey: adminEnv.ADMIN_PRIVATE_KEY!.replace(/\\n/g, '\n'),
         }),
-        databaseURL: process.env.ADMIN_DATABASE_URL!,
+        databaseURL: adminEnv.ADMIN_DATABASE_URL!,
       });
     } else {
       try {
@@ -26,11 +31,11 @@ export function getFirebaseAdmin() {
         console.warn("⚠️ getApp() failed despite getApps().length > 0 — reinitializing...");
         app = initializeApp({
           credential: cert({
-            projectId: process.env.ADMIN_PROJECT_ID!,
-            clientEmail: process.env.ADMIN_CLIENT_EMAIL!,
-            privateKey: process.env.ADMIN_PRIVATE_KEY!.replace(/\\n/g, '\n'),
+            projectId: adminEnv.ADMIN_PROJECT_ID!,
+            clientEmail: adminEnv.ADMIN_CLIENT_EMAIL!,
+            privateKey: adminEnv.ADMIN_PRIVATE_KEY!.replace(/\\n/g, '\n'),
           }),
-          databaseURL: process.env.ADMIN_DATABASE_URL!,
+          databaseURL: adminEnv.ADMIN_DATABASE_URL!,
         });
       }
     }
