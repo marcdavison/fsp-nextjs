@@ -353,7 +353,7 @@ a.secondary {
     margin-left: 10%;
     margin-top: 24px;
     font-size: 120%;
-    font-family: Montserrat;
+    font-family: var(--font-geist-mono);
   }
 
   .button {
