@@ -8,8 +8,7 @@ export function getFirebaseAdmin() {
   console.log("🧪 getApps() length:", getApps().length);
 
   const adminEnv = JSON.parse(process.env.FIREBASE_ADMIN_ENV as string);
-  console.log("adminEnv");
-  console.log(adminEnv);
+  
 
   let app;
   try {
