@@ -21,7 +21,7 @@ export default function AuthContainer() {
 
     return <>
         {   formView === 'login' && <><SignIn></SignIn>
-        <p className={classes.noAccount}>Do not have an account?<br></br><span onClick={changeView}>Create one here</span></p>
+        <p className={classes.noAccount}>Do not have an account? Then why not .. maybe work?<br></br><span onClick={changeView}>Create one here</span></p>
         </>   }
         {   formView === 'create' && <><CreateUser></CreateUser>
         <p className={classes.noAccount}>Already a member?<br></br><span onClick={changeView}>Sign in</span></p>
