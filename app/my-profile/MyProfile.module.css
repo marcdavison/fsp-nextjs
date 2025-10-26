@@ -1,0 +1,206 @@
+.pageContent {
+    width: 100vw;
+    height: 65vh;
+    background: linear-gradient(180deg, #fefefe 40px, #EEEEEE 41px, #fAFAfA 42px, #fcfcfc 100vh);
+    filter: drop-shadow(0px 0px 20px rgb(0, 0, 0, 0.3));
+    border-radius: 5px 5px 0px 0px;
+    padding-top: 10px;
+    position: absolute;
+    color: #000003;
+}
+
+.top {
+    margin-top: -10px;
+    height: 30vh;
+    background: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.top div.link {
+    width: 100%;
+    margin-left: calc(100% - 80px);
+    margin-top: 12px;
+}
+
+.top div.link a {
+    color: white;
+    width: 10px !important;
+} 
+
+.menuContainer ul {
+    width: calc(100% - 24px);
+    background-color: #fefefe;
+    margin-top: 24px;
+    height: calc(70vh - 20px);
+    list-style-type: none;
+    font-size: 100%;
+    font-family: Montserrat;
+    padding-left: 20px;
+}
+
+.menuContainer ul li {
+    padding-left: 35px;
+    text-align: left;
+    margin-left: 26px;
+    font-weight: 800;
+}
+
+.menuContainer ul li a {
+    border-bottom: 1px solid rgb(232, 225, 225);
+    text-decoration: none;
+    font-size: 115%;
+    color: #242424;
+    display: block;
+    padding: 16px 0 16px 10px;
+    font-weight: 600;
+    width: 100%;
+}
+
+.menuContainer ul li span {
+    font-size: 90%;
+    font-weight: 300;
+    line-height: 100%;
+    display: block;
+}
+
+.menuContainer ul li.details {
+    background: url('../../public/user.svg') no-repeat left center;
+    background-size: 25px 25px;
+}
+
+.menuContainer ul li.history {
+    background: url('../../public/calendar-icon.svg') no-repeat left center;
+    background-size: 30px 25px;
+}
+
+.welcome {
+    display: flex;
+    flex: 1;
+    align-items: flex-end;
+    margin: 0px 0px 26px 14px;
+}
+
+.welcome p {
+    font-family: Montserrat !important;
+    font-weight: 400;
+    font-size: 75%;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    text-transform: uppercase;
+    height: 30px;
+}
+
+.header h2 {
+    text-align: center;
+    line-height: 20px;
+    text-transform: uppercase;
+    font-family: Tilt Warp, cursive;
+}
+
+.header .link {
+    min-width: 40px;
+}
+
+.middle {
+    margin: 32px 12px 32px 24px;
+    height: calc(100% - 18vh);
+    overflow-y: auto;
+}
+
+
+.middle .menuContainer {
+    margin: -24px;
+}
+
+ul.menu {
+    margin-top: 24px;
+    padding: 0px;
+}
+
+ul.menu li {
+    display: flex;
+    list-style-type: none;
+    margin: 16px 0px;
+    border-bottom: 1px solid #999;
+    padding-bottom: 16px;
+    padding-left: 24px;
+    font-size: 100%;
+    justify-content: space-between;
+    padding-right: 16px;
+}
+
+a.link {
+    text-decoration: none;
+    color: #2f2f2f;
+    width: 85%;
+    text-align: left;
+    display: block;
+}
+
+a.backLink {
+    text-decoration: none;
+    color: #2f2f2f;
+    padding-left: 16px;
+}
+
+.temp {
+    background: red;
+    height: 150px;
+    width: 100%;
+    position: fixed;
+    bottom: 0px;
+    z-index: 9999;
+    view-transition-name: disabled;
+}
+
+.bottom ul {
+    width: calc(100% - 24px);
+    background-color: #fefefe;
+    margin-top: 24px;
+    height: calc(70vh - 20px);
+    list-style-type: none;
+    font-size: 100%;
+    font-family: Montserrat;
+    padding-left: 20px;
+}
+
+.bottom ul li {
+    padding-left: 35px;
+    text-align: left;
+    margin-left: 26px;
+    font-weight: 800;
+    width: 100%;
+}
+
+.bottom ul li a {
+    border-bottom: 1px solid rgb(232, 225, 225);
+    text-decoration: none;
+    font-size: 115%;
+    color: #242424;
+    display: block;
+    padding: 16px 0 16px 10px;
+    font-weight: 600;
+    width: 100%;
+}
+
+.bottom ul li span {
+    font-size: 90%;
+    font-weight: 300;
+    line-height: 100%;
+    display: block;
+}
+
+.bottom ul li.details {
+    background: url('../../public/user.svg') no-repeat left center;
+    background-size: 25px 25px;
+}
+
+.bottom ul li.history {
+    background: url('../../public/calendar-icon.svg') no-repeat left center;
+    background-size: 30px 25px;
+}
