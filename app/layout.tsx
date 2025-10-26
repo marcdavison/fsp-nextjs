@@ -1,16 +1,20 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Tilt_Warp, Montserrat } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+
+const tiltWarp = Tilt_Warp({
+  variable: '--font-tilt-warp',
+  subsets: ['latin'], // ✅ specify at least one subset
+  preload: true       // ✅ optional, but if true, subsets are required
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const montserratFont = Montserrat({
+  variable: '--font-montserrat',
+  subsets: ['latin'], // ✅ specify at least one subset
+  preload: true       // ✅ optional, but if true, subsets are required
 });
+
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -24,7 +28,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body className={`${tiltWarp.variable} ${montserratFont.variable}`}>
         {children}
       </body>
     </html>
