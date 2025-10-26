@@ -1,0 +1,28 @@
+.middle {
+    padding: 26px;
+}
+
+.middle ul li {
+    list-style-type: none;
+    display: flex;
+    border-bottom: 1px solid rgb(232, 225, 225);
+    text-decoration: none;
+    font-size: 115%;
+    color: #242424;
+    flex-direction: row;
+    line-height: normal;
+    padding: 10px;
+    justify-content: space-between;    
+    font-weight: bold;
+}
+
+.middle ul li p {
+    line-height: 160%;
+    font-family: Montserrat;
+}
+
+.middle ul li p span {
+    display: block;
+    font-size: 80%;
+    font-weight: normal;
+}

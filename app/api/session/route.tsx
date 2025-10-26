@@ -14,6 +14,8 @@ export async function POST(request: NextRequest) {
 
     // set session cookies
 
+
+
     const sessionCookie = await firebaseAuth.createSessionCookie(token, {
       expiresIn: 60 * 60 * 24 * 1000,
     });
@@ -22,6 +24,17 @@ export async function POST(request: NextRequest) {
 
 
     const response = NextResponse.json({ success: true });
+
+
+
+    response.cookies.set('pds-userdata', JSON.stringify(sessionData), {
+      httpOnly: true,
+      secure: true,
+      path: '/',
+      maxAge: 60 * 60 * 24 * 5,
+    });
+
+
     response.cookies.set('session', sessionCookie, {
       httpOnly: true,
       secure: true,
@@ -30,7 +43,38 @@ export async function POST(request: NextRequest) {
       maxAge: 60 * 60 * 24 * 5,
     });
 
-    response.cookies.set('userData', JSON.stringify(sessionData), {
+
+
+    // get user data from Realtime Database
+    const snapshot = await firebaseDB.ref(`/users/${uid}`).once('value');
+    const userData = snapshot.val();
+
+    // check on predictions.
+    if (userData.predictions) {
+      // update predictions in the cookie, only for those within the last week.
+      const LAST_WEEK = new Date();
+      LAST_WEEK.setDate(LAST_WEEK.getDate() - 7);
+      const clonedPredictions = { ...userData.predictions };
+      console.log('BEFORE CLONED[REDICTIONS IS ');
+      console.log(clonedPredictions);
+      const numberPredictedDates = Object.keys(userData.predictions);
+      console.log('KEYS LENGTH BEFORE');
+      console.log(Object.keys(userData.predictions).length);
+      for (let dateString of numberPredictedDates) {
+        console.log('dateString', dateString);
+        const date = new Date(dateString);
+        if (date < LAST_WEEK) {
+          delete clonedPredictions[dateString];
+        }
+      }
+      console.log('AFTER CLONED[REDICTIONS IS ');
+      console.log(clonedPredictions);
+      userData.predictions = clonedPredictions;
+      console.log('KEYS LENGTH AFTER');
+      console.log(Object.keys(userData.predictions).length);
+    }
+
+    response.cookies.set('userData', JSON.stringify(userData), {
       httpOnly: true,
       secure: true,
       path: '/',
