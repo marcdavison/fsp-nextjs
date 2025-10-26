@@ -7,6 +7,10 @@ export async function POST(request: NextRequest) {
     console.log("in the session api...")
     const { token, sessionData } = await request.json();
 
+    console.log("checking on environment values");
+    console.log("FIREBASE_ADMIN_ENV:", process.env.FIREBASE_ADMIN_ENV);
+
+
     // check values have been recieved in api
     console.log('in the api and token is ', token);
     console.log('in the api and sessionData is ', sessionData);
