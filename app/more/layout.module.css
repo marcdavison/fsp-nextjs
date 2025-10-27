@@ -15,6 +15,7 @@
     justify-content: space-between;
     text-transform: uppercase;
     height: 30px;
+    font-family: Tilt Warp, cursive;
 }
 
 .header h2 {
@@ -31,8 +32,13 @@
     margin: 32px 12px 32px 24px;
     height: calc(100% - 18vh);
     overflow-y: auto;
+    
 }
 
+.middle p {
+    font-family: Montserrat;
+    line-height: 180%;
+}
 
 .middle .menuContainer {
     margin: -24px;
@@ -77,4 +83,9 @@ a.backLink {
     bottom: 0px;
     z-index: 9999;
     view-transition-name: disabled;
+}
+
+.middle h2 {
+    font-family: Tilt Warp, cursive;
+    margin-top: 24px;
 }

@@ -73,11 +73,6 @@ a.backLink {
     padding-left: 16px;
 }
 
-.fixturesContainer {
-    height: 90vh;
-    overflow-y: auto;
-}
-
 .temp {
     background: red;
     height: 150px;
@@ -86,4 +81,9 @@ a.backLink {
     bottom: 0px;
     z-index: 9999;
     view-transition-name: disabled;
+}
+
+.resultsContainer {
+    height: 90vh;
+    overflow-y: auto;
 }

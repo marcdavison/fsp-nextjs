@@ -32,7 +32,10 @@ function formatTimeTo12Hr(datetimeString: string) {
 
 
 const Fixture = ({ id, fixture, kickoffTime, isResult, hasKickedOff, enablePredictions, userPredictions }: FixtureProps) => {
-
+  console.log("in fixture start");
+  console.log(userPredictions);
+  console.log(fixture)
+  console.log("in fixture end");
   // assume we can edit firstly
   let fixtureJsx =     <div className={classes.fixtureContainer}>
       <div className={classes.kickoffTime}>{formatTimeTo12Hr(kickoffTime)} A</div>
@@ -47,7 +50,7 @@ const Fixture = ({ id, fixture, kickoffTime, isResult, hasKickedOff, enablePredi
 
   if (isResult) {
       fixtureJsx = <div className={classes.fixtureContainer}>
-      <div className={classes.kickoffTime}>{formatTimeTo12Hr(kickoffTime)} B</div>
+      <div className={classes.kickoffTime}>{formatTimeTo12Hr(kickoffTime)}</div>
         <div className={classes.teamsRow}>
         { fixture.home && <Team home={true} teamData={fixture.home} isResult={isResult}></Team>}
         
@@ -66,7 +69,7 @@ const Fixture = ({ id, fixture, kickoffTime, isResult, hasKickedOff, enablePredi
 
         {
           // add NP if no prediction made
-          !userPredictions || !userPredictions[id] && <div className={classes.predictNotice}>
+          ((userPredictions === undefined) || (!userPredictions || !userPredictions[id])) && <div className={classes.predictNotice}>
           <div className={classes.prediction}>
             <div className={classes.points}>NP</div>
           </div>
