@@ -28,7 +28,7 @@ function getDatesPredictedOn(predictions: {
   const predKeys = Object.keys(predictions);
   console.log('predKeys are ', predKeys);
   const cloned = { ...predictions };
-  const ARR = [];
+  const ARR: string[] = [];
   console.log('start');
   for (let id of predKeys) {
     console.log('checking this prediction id', id);
@@ -48,7 +48,7 @@ function getDatesPredictedOn(predictions: {
       const thisDate = fixturesOfDate[0][0];
       console.log("thisDate is ", thisDate);
       cloned[id].dateString = thisDate;
-      if (predKeys.indexOf(thisDate) === -1 && ARR.indexOf(thisDate) === -1) {
+      if (thisDate && predKeys.indexOf(thisDate) === -1 && ARR.indexOf(thisDate) === -1) {
         ARR.push(thisDate);
       }
     }
@@ -154,7 +154,7 @@ export async function POST(req: NextRequest) {
       let cookiePredictions = USER_DATA_JSON.predictions;
       if (!cookiePredictions && !rtPredictionData) {
         // no predictions before
-        const CURRENT_PRED_DATES = [];
+        const CURRENT_PRED_DATES: string[] = [];
         cookiePredictions = {};
         for (let d of thisPredictionDates) {
           const thesePredictions = getPredictionsForGivenDate(d, predictions, rtPredictionData);
@@ -209,8 +209,8 @@ export async function POST(req: NextRequest) {
           for (let d of DATES_OF_PREDICTIONS) {
             const THESE_GAMES: {
               home?: number;
-              away?: number;
-            }[] = Object.values(d["39"]);
+              away?: number;x
+            }[] = Object.values((d as any)["39"]);
             for (let g of THESE_GAMES) {
               if (g.home === undefined || g.away === undefined) {
                 valid = false;
@@ -296,7 +296,7 @@ export async function POST(req: NextRequest) {
             const THESE_GAMES: {
               home?: number;
               away?: number;
-            }[] = Object.values(d["39"]);
+            }[] = Object.values((d as any)["39"]);
             for (let g of THESE_GAMES) {
               if (g.home === undefined || g.away === undefined) {
                 valid = false;
