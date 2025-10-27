@@ -123,7 +123,7 @@ export default function SignIn() {
         </p>
         {   errorState && <p className={classes.errorMessage}>{errorState}</p>   }
         <p><input type="submit" value={pending ? "Please wait..." : "Sign in"} className={classes.btn}/></p>
-        <p className={classes.forgottenPassword}><span onClick={forgottenPassword}>Forgotten your Password???</span></p>
+        <p className={classes.forgottenPassword}><span onClick={forgottenPassword}>Forgotten your Password</span></p>
 
         <div className={classes.authContainer}>
             <span>or</span>

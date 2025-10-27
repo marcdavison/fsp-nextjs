@@ -25,6 +25,7 @@ export function Dialog({ children   , open, className = '', onClose, data }: Dia
     const modal = dialog.current;
     if (open && modal) {
       console.log('calling showModal .. no data tho');
+      console.log('data is ...', data);
       modal.showModal();
     }
 

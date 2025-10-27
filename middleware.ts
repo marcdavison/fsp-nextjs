@@ -28,5 +28,5 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/home'], // Only intercept requests to /home
+  matcher: ['/home', '/fixtures/:path*', '/results/:path*'], // Only intercept requests to /home
 };

@@ -49,3 +49,12 @@
   font-family: Tilt Warp, cursive;
   font-weight: 400;
 }
+
+.modal p {
+  font-family: Montserrat;
+}
+
+.modal p span {
+  font-family: Montserrat;
+  font-weight: 800;
+}
