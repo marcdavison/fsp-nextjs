@@ -10,7 +10,6 @@ const tiltWarp = Tilt_Warp({
 });
 
 import Fixture from "./Fixture";
-import FixtureClient from './FixtureNotStarted';
 import FixtureNotStarted from './FixtureNotStarted';
 import FixtureComplete from './FixtureComplete';
 
@@ -99,7 +98,7 @@ const FixtureGroup = async ({ date, games, allowPredictions, userPredictions, is
 
   if (isResultsPage) {
     return  <div className={classes.fixtureGroup}>
-      <h3 className={tiltWarp.className}>{convertDate(date)} 1</h3>
+      <h3 className={tiltWarp.className}>{convertDate(date)}</h3>
         {
                     SORTED_GAMES.map((fixture) => (
 

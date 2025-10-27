@@ -159,7 +159,7 @@ a {
 
 footer {
   display: block;
-  height: 60px;
+  height: 76px;
   bottom: 0px;
   background: linear-gradient(180deg, #fff 60%, #ddd);
   position: fixed;
@@ -172,7 +172,8 @@ footer {
   left: 0;
   z-index: 2;
   color: #000;
-  padding-top: 3px;    
+  padding-top: 16px;
+  border-top: 1px solid lightgray;
 }
 
 footer ul {

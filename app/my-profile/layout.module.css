@@ -34,6 +34,10 @@
     overflow-y: auto;
 }
 
+.middle p {
+    font-family: Montserrat;
+}
+
 
 .middle .menuContainer {
     margin: -24px;
