@@ -2,8 +2,6 @@ import classes from './layout.module.css';
 import classes1 from './MyProfile.module.css'
 import NavLink from '../components/ui/NavLink';
 import { AniType } from '@/app/utils/types';
-import { getAuth } from "firebase/auth";
-import { auth } from '@/firebase/clientApp';
 import { cookies } from 'next/headers';
 
 
@@ -12,10 +10,11 @@ const MyProfile = async () => {
     const userCookie: any = cookieStore.get('userData')?.value;
     const userDetailsCookie: any = cookieStore.get('pds-userdata')?.value;
 
-    let rtdbUser, authDetails;
+    let rtdbUser, authDetails, joinDate;
     try {
         rtdbUser = JSON.parse(userCookie);
         authDetails = JSON.parse(userDetailsCookie);
+        joinDate = new Date(authDetails.creationTime);
     } catch (error) {
         console.error('Failed to parse userData cookie:', error);
         return <div>Error loading user data.</div>;
@@ -23,10 +22,10 @@ const MyProfile = async () => {
     return <>
 
         <div className={classes1.top}>
-            <div className={classes.link}><NavLink href="/home" className={classes.link} aniType={AniType.FADE}>DONE</NavLink></div>
+            <div className={classes1.link}><NavLink href="/home" className={classes.link} aniType={AniType.FADE}>DONE</NavLink></div>
             <div className={classes1.welcome}>
                 <h2>Hi {rtdbUser.gameDisplayName},
-                    <p>Joined: { authDetails.creationTime }</p>
+                    <p>Joined: { joinDate.toLocaleDateString() }</p>
                 </h2>
             </div>
         </div>

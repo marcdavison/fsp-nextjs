@@ -97,7 +97,6 @@ export function getWaitingForWeekToStart(now: Date, weeklyData: FixtureHolder): 
 }
 
 export function getUserTotal(predictions: PredictionHolder, weeklyNowOrPrev: FixtureHolder): number {
-    return 20;
     let totalScore = 0;
     // loop over fixture dates for this week
     for (const d of Object.keys(weeklyNowOrPrev.fixtures)) {

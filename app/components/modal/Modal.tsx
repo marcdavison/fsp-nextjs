@@ -12,6 +12,7 @@ import WildcardCreate from "./content/WildcardCreate";
 import JoinPrivateLeague from "./content/JoinedPrivateLeague";
 import ForgottenPassword from "./content/ForgottenPassword";
 import CreateUser from "./content/CreateUser";
+import CreatePrivateLeague from "./content/CreatedPrivateLeague";
 import VerifyUser from "./content/VerifyUser";
 import { ModalType } from "@/app/utils/types-modal";
 
@@ -24,6 +25,9 @@ export default function Modal({ data }: { data?: any }) {
   function handleClose()  {
     modalCtx.hideModal();
   }
+
+  console.log('data in Modal component');
+  console.log(data);
 
   let content = <></>;
 
@@ -44,6 +48,8 @@ export default function Modal({ data }: { data?: any }) {
     content =  <CreateUser close={handleClose}></CreateUser>
   } else if (modalCtx.type === ModalType.USER_NOT_VERIFIED) {
     content =  <VerifyUser close={handleClose}></VerifyUser>
+  } else if (modalCtx.type === ModalType.CREATE_PRIVATE_LEAGUE) {
+    content = <CreatePrivateLeague close={handleClose} data={modalCtx.data}></CreatePrivateLeague>
   }
 
   if (content === <></>) {

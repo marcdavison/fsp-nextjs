@@ -1,4 +1,3 @@
-import { Tilt_Warp } from 'next/font/google';
 import { getMarkersFromRTDB } from '@/lib/getMarkers';
 import { PredictionsContextProvider } from '@/store/PredictionsContext';
 import { cookies } from 'next/headers';
@@ -9,11 +8,6 @@ import classes from './fixtures.module.css';
 import NavLink from '@/app/components/ui/NavLink';
 import { AniType, FixtureData } from '@/app/utils/types';
 import SavePredictions from '@/app/components/fixture/SavePredictions';
-
-const tiltWarp = Tilt_Warp({
-  subsets: ["latin"],
-  weight: "variable"
-});
 
 const Fixtures = async () => {
 
@@ -67,7 +61,7 @@ const Fixtures = async () => {
                 <div className={classes.pageContent}>
                     <div className={classes.header}>
                         <div className={classes.link}><NavLink href="/home" className={classes.backLink} aniType={AniType.BACK}>&lt;</NavLink></div>
-                        <h2 className={tiltWarp.className}>FIXTURES</h2>
+                        <h2>FIXTURES</h2>
                         <div className={classes.link}></div>
                     </div>
                     <div className={classes.fixturesContainer}>

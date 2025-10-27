@@ -1,0 +1,79 @@
+.pageContent {
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(180deg, #fefefe 40px, #eee, #fafafa 42px, #fcfcfc 100vh);
+    position: absolute;
+    filter: drop-shadow(0px 0px 20px rgb(0, 0, 0, .3));
+    top: 10px;
+    border-radius: 5px 5px 0 0;
+    padding-top: 10px;
+    color: black;
+}
+
+.header {
+    text-transform: uppercase;
+    justify-content: space-between;
+    height: 30px;
+    display: flex;
+}
+
+.header h2 {
+    font-family: Tilt Warp, cursive;
+}
+
+.middle {
+    height: calc(100% - 18vh);
+    margin: 32px 12px 32px 24px;
+    overflow-y: auto;
+}
+
+.middle h3 {
+    text-transform: uppercase;
+}
+
+div.link {
+    margin-right: 12px;
+    font-weight: 800;
+}
+
+.formContainer {
+    border: 1px solid #ccc;
+    background: #fff;
+    width: 94%;
+    margin: 24px auto 24px 0;
+    padding: 16px;
+}
+
+input.inputText {
+    border-radius: 10px;
+    height: 44px;
+    background: #f4f4f480;
+    border: 0px none;
+    margin-bottom: 12px;
+    padding-left: 10px;
+    font-size: 95%;
+    width: 100%;
+    max-width: 300px;
+    color: #0a0a0a80;
+    font-family: Montserrat;
+    border: 1px solid rgb(10, 10, 10, .1);
+}
+
+.button {
+    color: #fff;
+    filter: none;
+    text-align: center;
+    background: #444def;
+    border: 0;
+    border-radius: 6px;
+    flex-direction: column;
+    width: 100%;
+    margin: 0 auto;
+    padding: 18px;
+    font-family: Tilt Warp, cursive;
+    font-size: 120%;
+    display: flex;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin: 12px 0px;
+}

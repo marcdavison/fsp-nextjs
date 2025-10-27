@@ -7,4 +7,5 @@ export enum ModalType {
   FORGOTTEN_PASSWORD = 'forgotten-password',
   NEW_ACCOUNT = 'new-account',
   USER_NOT_VERIFIED = 'user-not-verified',
+  CREATE_PRIVATE_LEAGUE = 'create-private-league',
 }

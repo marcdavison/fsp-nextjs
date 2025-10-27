@@ -1,14 +1,15 @@
 import { Button } from "../Button";
 import classes from '../Modal.module.css';
 
-const EditNameContent = ({ close }: { close: () => void }) => {
+const CreatePrivateLeague = ({ close, data }: { close: () => void; data: string }) => {
     return <>
         <div className={classes.top}>
-           <h3>Edit display name</h3>
+           <h3>You're all set</h3>
             <Button onClick={close} cssClass={classes.closeX} textOnly={false}>X</Button>
         </div>
-        <p>Hello there, how's it going?</p>
+        <p>Your private league has been created. League id: <span>{data}</span></p>
+        <p>Forward the League id to your friends to start playing.</p>
     </>
 }
 
-export default EditNameContent;
+export default CreatePrivateLeague;

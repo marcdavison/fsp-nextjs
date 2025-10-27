@@ -11,14 +11,16 @@ interface ModalProviderProps {
 interface ModalContextType {
   display: boolean;
   type: string;
-  showModal: (data?: any) => void;
+  data: any;
+  showModal: () => void;
   hideModal: () => void;
-  setModal: (str: string) => void;
+  setModal: (str: string, data?: any) => void;
 }
 
 const ModalContext = createContext<ModalContextType>({
   display: false,
   type: '',
+  data: null,
   showModal: (data?: any) => {},
   hideModal: () => {},
   setModal: () => {},
@@ -27,6 +29,7 @@ const ModalContext = createContext<ModalContextType>({
 export function ModalContextProvider({ children }: ModalProviderProps) {
   const [modalShow, setModalShow] = useState(false);
   const [modalType, setModalType] = useState('');
+  const [modalData, setModalData] = useState('');
 
 
   function showModal(data?: any) {
@@ -39,13 +42,16 @@ export function ModalContextProvider({ children }: ModalProviderProps) {
     setModalShow(false);
   }
 
-  function setModal(str: string) {
+  function setModal(str: string, data: any) {
+     console.log('in the setmodal function');
     setModalType(str);
+    setModalData(data || null);
   }
 
   const modalCtx = {
     display: modalShow,
     type: modalType,
+    data: modalData,
     showModal,
     hideModal,
     setModal,
