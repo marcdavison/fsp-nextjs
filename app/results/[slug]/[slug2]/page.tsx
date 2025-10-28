@@ -1,4 +1,5 @@
 import { getMarkersFromRTDB } from '@/lib/getMarkers';
+import { headers } from 'next/headers';
 import NavLink from '@/app/components/ui/NavLink';
 import classes from './results.module.css';
 import { cookies } from 'next/headers';
@@ -6,9 +7,15 @@ import FixtureGroup from '@/app/components/fixture/FixtureGroup';
 import { AniType } from '@/app/utils/types';
 
 
-function getLogoImage(logo: string) {
+function getLogoImage(logo: string, host: string | any) {
     const SPLIT = logo.split('/');
-    return `http://localhost:3000/team-logos/${SPLIT[SPLIT.length - 1]}`;
+    console.log('process.env.HOST is ', host);
+    if (host.indexOf('localhost') > -1) {
+        return `http://localhost:3000/team-logos/${SPLIT[SPLIT.length - 1]}`;
+    } else {
+        return `/team-logos/${SPLIT[SPLIT.length - 1]}`;
+    }
+
 }
 
 const Results = async () => {
@@ -16,6 +23,8 @@ const Results = async () => {
     // get the user data from the cookie, if no userData or sessionData then we redirect back to auth via m
     const cookieStore = await cookies();
     const userCookie: any = cookieStore.get('userData')?.value;
+    const headersList = await headers();
+    const host = headersList.get('host') || null;
     
 
     let userData;
@@ -53,12 +62,12 @@ const Results = async () => {
                 newWeeklyPrev.fixtures[THIS_DATE][GAME_KEYS[g]] = {
                     away: {
                         name: THIS_GAME.a.n,
-                        logo: getLogoImage(THIS_GAME.a.l),
+                        logo: getLogoImage(THIS_GAME.a.l, host),
                         goals: THIS_GAME.a.g
                     },
                     home: {
                         name: THIS_GAME.h.n,
-                        logo: getLogoImage(THIS_GAME.h.l),
+                        logo: getLogoImage(THIS_GAME.h.l, host),
                         goals: THIS_GAME.h.g
                     },
                     kickoff: THIS_GAME.k

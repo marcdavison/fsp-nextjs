@@ -32,10 +32,6 @@ function formatTimeTo12Hr(datetimeString: string) {
 
 
 const Fixture = ({ id, fixture, kickoffTime, isResult, hasKickedOff, enablePredictions, userPredictions }: FixtureProps) => {
-  console.log("in fixture start");
-  console.log(userPredictions);
-  console.log(fixture)
-  console.log("in fixture end");
   // assume we can edit firstly
   let fixtureJsx =     <div className={classes.fixtureContainer}>
       <div className={classes.kickoffTime}>{formatTimeTo12Hr(kickoffTime)} A</div>
